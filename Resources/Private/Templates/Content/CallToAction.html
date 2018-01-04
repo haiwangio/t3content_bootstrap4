@@ -1,0 +1,74 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="callToAction" label="Call To Action" options="{group:'Bootstrap4',Fluidcontent: {sorting:50},icon:'EXT:t3content_bootstrap4/Resources/Public/Icons/Content/CallToAction.png'}" localLanguageFileRelativePath="/Resources/Private/Language/locallang_calltoaction.xlf">
+
+        <flux:form.sheet name="textSheet" label="General" variables="{_all}">
+            <flux:field.input name="settings.headline" label="Headline" />
+        </flux:form.sheet>
+        <flux:form.sheet name="formSheet" label="Form" variables="{_all}">
+            <flux:field.input name="settings.inputPlaceholder" label="Placeholder" />
+            <flux:field.input name="settings.formAction" label="URL to send the form to" />
+            <flux:field.input name="settings.btnText" label="Button Text" />
+            <flux:field.select name="settings.btnColor"
+                             label="Buttons Color"
+                             default="btn-primary"
+                             items="{
+                                 0:{0:'Primary',1:'btn-primary'},
+                                 1:{0:'Secondary',1:'btn-secondary'},
+                                 2:{0:'Success',1:'btn-success'},
+                                 3:{0:'Info',1:'btn-info'},
+                                 4:{0:'Warning',1:'btn-warning'},
+                                 5:{0:'Danger',1:'btn-danger'},
+                                 6:{0:'Link',1:'btn-link'}
+                              }"/>
+        </flux:form.sheet>
+        <flux:form.sheet name="backgroundSheet" label="Background" variables="{_all}">
+            <flux:field.file name="settings.bgImage" allowed="jpg,png,svg" showThumbnails="1" label="Background Image" />
+            <flux:field.input name="settings.bgColor" label="Background color (optional)">
+                <flux:wizard.colorPicker label="'Color Picker'" hideParent="1" dim="'128x128'" width="256" height="256" exampleImg="'EXT:flux/Resources/Public/Icons/ColorWheel.png'"></flux:wizard.colorPicker>
+            </flux:field.input>
+        </flux:form.sheet>
+
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <small><strong>FCE: Call To Action</strong></small>
+    <hr/>
+    <f:if condition="{settings.headline}"><h2>{settings.headline}</h2></f:if>
+</f:section>
+
+<f:section name="Main">
+	<!-- Call to Action -->
+	<section class="call-to-action text-white text-center" style="{f:if(condition:settings.bgColor,then:'background-color:{settings.bgColor};')} {f:if(condition:settings.bgImage,then:'background-image:url({f:uri.image(src:settings.bgImage,treatIdAsReference:1)});',else:'background-image:none;')}">
+	  <div class="overlay"></div>
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-xl-9 mx-auto">
+	        <h2 class="mb-4">{settings.headline}</h2>
+	      </div>
+	      <f:if condition="{settings.btnText}">
+		      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+		        <form action="{settings.formAction}">
+		          <div class="form-row">
+		            <div class="col-12 col-md-9 mb-2 mb-md-0">
+		              <input type="email" class="form-control form-control-lg" placeholder="{settings.inputPlaceholder}">
+		            </div>
+		            <div class="col-12 col-md-3">
+		              <button type="submit" class="btn btn-block btn-lg {settings.btnColor}">{settings.btnText}</button>
+		            </div>
+		          </div>
+		        </form>
+		      </div>
+	      </f:if>
+	    </div>
+	  </div>
+	</section>
+</f:section>
+
+</div>

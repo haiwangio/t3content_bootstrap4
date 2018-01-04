@@ -1,0 +1,110 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="showcase" label="Showcase" options="{group:'Bootstrap4',Fluidcontent: {sorting:30},icon:'EXT:t3content_bootstrap4/Resources/Public/Icons/Content/Showcase.png'}" localLanguageFileRelativePath="/Resources/Private/Language/locallang_showcase.xlf">
+
+        <flux:form.sheet name="showcase1Sheet" label="New Showcase" variables="{_all}">
+            <flux:field.checkbox name="settings.useShowcase1"
+                       label="Enable Showcase"
+                       default="NULL"
+                       required=""
+                       requestUpdate="1" />
+          <flux:field.input name="settings.showcase1Header" label="Showcase Header" displayCond="FIELD:settings.useShowcase1:=:1" />
+          <flux:field.input name="settings.showcase1SubHeader" label="Showcase Subheader" displayCond="FIELD:settings.useShowcase1:=:1" />
+          <flux:field.file name="settings.showcase1BgImage" allowed="jpg,png,svg" showThumbnails="1" label="Image" displayCond="FIELD:settings.useShowcase1:=:1" />
+          <flux:field.input name="settings.showcase1BgColor" label="Background color (optional)" displayCond="FIELD:settings.useShowcase1:=:1">
+              <flux:wizard.colorPicker label="'Color Picker'" hideParent="1" dim="'128x128'" width="256" height="256" exampleImg="'EXT:flux/Resources/Public/Icons/ColorWheel.png'"></flux:wizard.colorPicker>
+          </flux:field.input>
+      </flux:form.sheet>
+      <flux:form.sheet name="showcase2Sheet" label="New Showcase" variables="{_all}">
+            <flux:field.checkbox name="settings.useShowcase2"
+                       label="Enable Showcase"
+                       default="NULL"
+                       required=""
+                       requestUpdate="1" />
+          <flux:field.input name="settings.showcase2Header" label="Showcase Header" displayCond="FIELD:settings.useShowcase2:=:1" />
+          <flux:field.input name="settings.showcase2SubHeader" label="Showcase Subheader" displayCond="FIELD:settings.useShowcase2:=:1" />
+          <flux:field.file name="settings.showcase2BgImage" allowed="jpg,png,svg" showThumbnails="1" label="Image" displayCond="FIELD:settings.useShowcase2:=:1" />
+          <flux:field.input name="settings.showcase2BgColor" label="Background color (optional)" displayCond="FIELD:settings.useShowcase2:=:1">
+              <flux:wizard.colorPicker label="'Color Picker'" hideParent="1" dim="'128x128'" width="256" height="256" exampleImg="'EXT:flux/Resources/Public/Icons/ColorWheel.png'"></flux:wizard.colorPicker>
+          </flux:field.input>
+    </flux:form.sheet>
+      <flux:form.sheet name="showcase3Sheet" label="New Showcase" variables="{_all}">
+            <flux:field.checkbox name="settings.useShowcase3"
+                       label="Enable Showcase"
+                       default="NULL"
+                       required=""
+                       requestUpdate="1" />
+          <flux:field.input name="settings.showcase3Header" label="Showcase Header" displayCond="FIELD:settings.useShowcase3:=:1" />
+          <flux:field.input name="settings.showcase3SubHeader" label="Showcase Subheader" displayCond="FIELD:settings.useShowcase3:=:1" />
+          <flux:field.file name="settings.showcase3BgImage" allowed="jpg,png,svg" showThumbnails="1" label="Image" displayCond="FIELD:settings.useShowcase3:=:1" />
+          <flux:field.input name="settings.showcase3BgColor" label="Background color (optional)" displayCond="FIELD:settings.useShowcase3:=:1">
+              <flux:wizard.colorPicker label="'Color Picker'" hideParent="1" dim="'128x128'" width="256" height="256" exampleImg="'EXT:flux/Resources/Public/Icons/ColorWheel.png'"></flux:wizard.colorPicker>
+          </flux:field.input>
+      </flux:form.sheet>
+
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <small><strong>FCE: Showcase</strong></small>
+    <hr/>
+    <!-- Image Showcases -->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <f:if condition="{settings.useShowcase1}">
+          <f:if condition="{settings.showcase1Header}"><h2>{settings.showcase1Header}</h2></f:if>
+          <f:if condition="{settings.showcase1SubHeader}"><p class="lead mb-0">{settings.showcase1SubHeader}</p></f:if>
+        </f:if>
+        <f:if condition="{settings.useShowcase2}">
+          <f:if condition="{settings.showcase2Header}"><h2>{settings.showcase2Header}</h2></f:if>
+          <f:if condition="{settings.showcase2SubHeader}"><p class="lead mb-0">{settings.showcase2SubHeader}</p></f:if>
+        </f:if>
+        <f:if condition="{settings.useShowcase3}">
+          <f:if condition="{settings.showcase3Header}"><h2>{settings.showcase3Header}</h2></f:if>
+          <f:if condition="{settings.showcase3SubHeader}"><p class="lead mb-0">{settings.showcase3SubHeader}</p></f:if>
+        </f:if>
+      </div>
+    </section>
+</f:section>
+
+<f:section name="Main">
+    <!-- Image Showcases -->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <f:if condition="{settings.useShowcase1}">
+        <div class="row no-gutters">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="{f:if(condition:settings.showcase1BgColor,then:'background-color:{settings.showcase1BgColor};')} {f:if(condition:settings.showcase1BgImage,then:'background-image:url({f:uri.image(src:settings.showcase1BgImage,treatIdAsReference:1)});',else:'background-image:none;')}"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <f:if condition="{settings.showcase1Header}"><h2>{settings.showcase1Header}</h2></f:if>
+            <f:if condition="{settings.showcase1SubHeader}"><p class="lead mb-0">{settings.showcase1SubHeader}</p></f:if>
+          </div>
+        </div>
+        </f:if>
+        <f:if condition="{settings.useShowcase2}">
+        <div class="row no-gutters">
+          <div class="col-lg-6 text-white showcase-img" style="{f:if(condition:settings.showcase2BgColor,then:'background-color:{settings.showcase2BgColor};')} {f:if(condition:settings.showcase2BgImage,then:'background-image:url({f:uri.image(src:settings.showcase2BgImage,treatIdAsReference:1)});',else:'background-image:none;')}"></div>
+          <div class="col-lg-6 my-auto showcase-text">
+            <f:if condition="{settings.showcase2Header}"><h2>{settings.showcase2Header}</h2></f:if>
+            <f:if condition="{settings.showcase2SubHeader}"><p class="lead mb-0">{settings.showcase2SubHeader}</p></f:if>
+          </div>
+        </div>
+        </f:if>
+        <f:if condition="{settings.useShowcase3}">
+        <div class="row no-gutters">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="{f:if(condition:settings.showcase3BgColor,then:'background-color:{settings.showcase3BgColor};')} {f:if(condition:settings.showcase3BgImage,then:'background-image:url({f:uri.image(src:settings.showcase3BgImage,treatIdAsReference:1)});',else:'background-image:none;')}"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <f:if condition="{settings.showcase3Header}"><h2>{settings.showcase3Header}</h2></f:if>
+            <f:if condition="{settings.showcase3SubHeader}"><p class="lead mb-0">{settings.showcase3SubHeader}</p></f:if>
+          </div>
+        </div>
+        </f:if>
+      </div>
+    </section>
+</f:section>
+
+</div>

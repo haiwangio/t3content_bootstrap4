@@ -1,0 +1,43 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="masthead" label="Masthead" options="{group: 'Bootstrap4',Fluidcontent: {sorting:10},icon:'EXT:t3content_bootstrap4/Resources/Public/Icons/Content/Masthead.png'}" localLanguageFileRelativePath="/Resources/Private/Language/locallang_masthead.xlf">
+
+        <flux:form.sheet name="textSheet" label="General" variables="{_all}">
+            <flux:field.input name="settings.headline" label="Headline" />
+            <flux:field.input name="settings.subheadline" label="Subheadline" />
+        </flux:form.sheet>
+        <flux:form.sheet name="backgroundSheet" label="Background" variables="{_all}">
+            <flux:field.file name="settings.bgImage" allowed="jpg,png,svg" showThumbnails="1" label="Background Image" />
+            <flux:field.input name="settings.bgColor" label="Background color (optional)">
+                <flux:wizard.colorPicker label="'Color Picker'" hideParent="1" dim="'128x128'" width="256" height="256" exampleImg="'EXT:flux/Resources/Public/Icons/ColorWheel.png'"></flux:wizard.colorPicker>
+            </flux:field.input>
+        </flux:form.sheet>
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <small><strong>FCE: Masthead</strong></small>
+    <hr/>
+    <f:if condition="{settings.headline}"><h2>{settings.headline}</h2></f:if>
+</f:section>
+
+<f:section name="Main">
+    <!-- Masthead -->
+    <header class="masthead text-white text-center" style="{f:if(condition:settings.bgColor,then:'background-color:{settings.bgColor};')} {f:if(condition:settings.bgImage,then:'background-image:url({f:uri.image(src:settings.bgImage,treatIdAsReference:1)});',else:'background-image:none;')}">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">{settings.headline} <f:if condition="{settings.subheadline}"> <small>{settings.subheadline}</small></f:if></h1>
+          </div>
+        </div>
+      </div>
+    </header>
+</f:section>
+
+</div>

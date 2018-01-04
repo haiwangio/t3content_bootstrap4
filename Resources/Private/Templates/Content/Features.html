@@ -1,0 +1,174 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="features" label="Features" options="{group:'Bootstrap4',Fluidcontent: {sorting:20},icon:'EXT:t3content_bootstrap4/Resources/Public/Icons/Content/Features.png'}" localLanguageFileRelativePath="/Resources/Private/Language/locallang_features.xlf">
+
+        <flux:form.sheet name="feature1Sheet" label="New Feature" variables="{_all}">
+          <flux:field.checkbox name="settings.useFeature1"
+                     label="Enable Feature"
+                     default="NULL"
+                     required=""
+                     requestUpdate="1" />
+          <flux:field.select name="settings.feature1Icon"
+                     label="Icon"
+                     displayCond="FIELD:settings.useFeature1:=:1"
+                     default="icon-screen-desktop"
+                     maxItems="1"
+                     items="{
+                    1:{0:'',1:''},
+                    2:{0:'icon-screen-desktop',1:'icon-screen-desktop'},
+                    3:{0:'icon-layers',1:'icon-layers'},
+                    4:{0:'icon-check',1:'icon-check'}
+                     }"/>
+        <flux:field.input name="settings.feature1Header" label="Feature Header" displayCond="FIELD:settings.useFeature1:=:1" />
+        <flux:field.input name="settings.feature1Subheader" label="Feature Subheader" displayCond="FIELD:settings.useFeature1:=:1" />
+      </flux:form.sheet>
+        <flux:form.sheet name="feature2Sheet" label="New Feature" variables="{_all}">
+          <flux:field.checkbox name="settings.useFeature2"
+                     label="Enable Feature"
+                     default="NULL"
+                     required=""
+                     requestUpdate="1" />
+          <flux:field.select name="settings.feature2Icon"
+                     label="Icon"
+                     displayCond="FIELD:settings.useFeature2:=:1"
+                     default="icon-screen-desktop"
+                     maxItems="1"
+                     items="{
+                    1:{0:'',1:''},
+                    2:{0:'icon-screen-desktop',1:'icon-screen-desktop'},
+                    3:{0:'icon-layers',1:'icon-layers'},
+                    4:{0:'icon-check',1:'icon-check'}
+                     }"/>
+        <flux:field.input name="settings.feature2Header" label="Feature Header" displayCond="FIELD:settings.useFeature2:=:1" />
+        <flux:field.input name="settings.feature2Subheader" label="Feature Subheader" displayCond="FIELD:settings.useFeature2:=:1" />
+      </flux:form.sheet>
+        <flux:form.sheet name="feature3Sheet" label="New Feature" variables="{_all}">
+          <flux:field.checkbox name="settings.useFeature3"
+                     label="Enable Feature"
+                     default="NULL"
+                     required=""
+                     requestUpdate="1" />
+          <flux:field.select name="settings.feature3Icon"
+                     label="Icon"
+                     displayCond="FIELD:settings.useFeature3:=:1"
+                     default="icon-screen-desktop"
+                     maxItems="1"
+                     items="{
+                    1:{0:'',1:''},
+                    2:{0:'icon-screen-desktop',1:'icon-screen-desktop'},
+                    3:{0:'icon-layers',1:'icon-layers'},
+                    4:{0:'icon-check',1:'icon-check'}
+                     }"/>
+        <flux:field.input name="settings.feature3Header" label="Feature Header" displayCond="FIELD:settings.useFeature3:=:1" />
+        <flux:field.input name="settings.feature3Subheader" label="Feature Subheader" displayCond="FIELD:settings.useFeature3:=:1" />
+      </flux:form.sheet>
+        <flux:form.sheet name="feature4Sheet" label="New Feature" variables="{_all}">
+          <flux:field.checkbox name="settings.useFeature4"
+                     label="Enable Feature"
+                     default="NULL"
+                     required=""
+                     requestUpdate="1" />
+          <flux:field.select name="settings.feature4Icon"
+                     label="Icon"
+                     displayCond="FIELD:settings.useFeature4:=:1"
+                     default="icon-screen-desktop"
+                     maxItems="1"
+                     items="{
+                    1:{0:'',1:''},
+                    2:{0:'icon-screen-desktop',1:'icon-screen-desktop'},
+                    3:{0:'icon-layers',1:'icon-layers'},
+                    4:{0:'icon-check',1:'icon-check'}
+                     }"/>
+        <flux:field.input name="settings.feature4Header" label="Feature Header" displayCond="FIELD:settings.useFeature4:=:1" />
+        <flux:field.input name="settings.feature4Subheader" label="Feature Subheader" displayCond="FIELD:settings.useFeature4:=:1" />
+      </flux:form.sheet>
+
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <small><strong>FCE: Features</strong></small>
+    <hr/>
+    <!-- Icons Grid -->
+    <section class="features-icons">
+        <f:if condition="{settings.useFeature1}">
+            <f:if condition="{settings.feature1Header}"><h2>{settings.feature1Header}</h2></f:if>
+        </f:if>
+        <f:if condition="{settings.useFeature2}">
+            <f:if condition="{settings.feature2Header}"><h2>{settings.feature2Header}</h2></f:if>
+        </f:if>
+        <f:if condition="{settings.useFeature3}">
+            <f:if condition="{settings.feature3Header}"><h2>{settings.feature3Header}</h2></f:if>
+        </f:if>
+        <f:if condition="{settings.useFeature4}">
+            <f:if condition="{settings.feature4Header}"><h2>{settings.feature4Header}</h2></f:if>
+        </f:if>
+    </section>
+</f:section>
+
+<f:section name="Main">
+    <!-- Icons Grid -->
+    <section class="features-icons text-center">
+      <div class="row">
+        <f:if condition="{settings.useFeature1}">
+          <div class="col-sm">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <f:if condition="{settings.feature1Icon}">
+                <div class="features-icons-icon">
+                  <i class="{settings.feature1Icon} m-auto text-primary"></i>
+                </div>
+              </f:if>
+              <f:if condition="{settings.feature1Header}"><h3>{settings.feature1Header}</h3></f:if>
+              <f:if condition="{settings.feature1Subheader}"><p class="lead mb-0">{settings.feature1Subheader}</p></f:if>
+            </div>
+          </div>
+        </f:if>
+        <f:if condition="{settings.useFeature2}">
+          <div class="col-sm">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <f:if condition="{settings.feature2Icon}">
+                <div class="features-icons-icon">
+                  <i class="{settings.feature2Icon} m-auto text-primary"></i>
+                </div>
+              </f:if>
+              <f:if condition="{settings.feature2Header}"><h3>{settings.feature2Header}</h3></f:if>
+              <f:if condition="{settings.feature2Subheader}"><p class="lead mb-0">{settings.feature2Subheader}</p></f:if>
+            </div>
+          </div>
+        </f:if>
+        <f:if condition="{settings.useFeature3}">
+          <div class="col-sm">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <f:if condition="{settings.feature3Icon}">
+                <div class="features-icons-icon">
+                  <i class="{settings.feature3Icon} m-auto text-primary"></i>
+                </div>
+              </f:if>
+              <f:if condition="{settings.feature3Header}"><h3>{settings.feature3Header}</h3></f:if>
+              <f:if condition="{settings.feature3Subheader}"><p class="lead mb-0">{settings.feature3Subheader}</p></f:if>
+            </div>
+          </div>
+        </f:if>
+        <f:if condition="{settings.useFeature4}">
+          <div class="col-sm">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <f:if condition="{settings.feature4Icon}">
+                <div class="features-icons-icon">
+                  <i class="{settings.feature4Icon} m-auto text-primary"></i>
+                </div>
+              </f:if>
+              <f:if condition="{settings.feature4Header}"><h3>{settings.feature4Header}</h3></f:if>
+              <f:if condition="{settings.feature4Subheader}"><p class="lead mb-0">{settings.feature4Subheader}</p></f:if>
+            </div>
+          </div>
+        </f:if>
+      </div>
+    </section>
+</f:section>
+
+</div>

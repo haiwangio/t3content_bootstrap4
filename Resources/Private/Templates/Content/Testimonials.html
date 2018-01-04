@@ -1,0 +1,88 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="testimonials" label="Testimonials" options="{group:'Bootstrap4',Fluidcontent: {sorting:40},icon:'EXT:t3content_bootstrap4/Resources/Public/Icons/Content/Testimonials.png'}" localLanguageFileRelativePath="/Resources/Private/Language/locallang_testimonials.xlf">
+
+        <flux:form.sheet name="optionsSheet" label="Options" variables="{_all}">
+          <flux:field.input name="settings.header" label="Header" default="What people are saying..." />
+        </flux:form.sheet>
+        <flux:form.sheet name="testimonial1Sheet" label="New testimonial" variables="{_all}">
+            <flux:field.checkbox name="settings.useTestimonial1"
+                       label="Enable Testimonial"
+                       default="NULL"
+                       required=""
+                       requestUpdate="1" />
+          <flux:field.input name="settings.testimonial1Header" label="Testimonial Header" displayCond="FIELD:settings.useTestimonial1:=:1" />
+          <flux:field.input name="settings.testimonial1SubHeader" label="Testimonial Subheader" displayCond="FIELD:settings.useTestimonial1:=:1" />
+          <flux:field.file name="settings.testimonial1BgImage" allowed="jpg,png,svg" showThumbnails="1" label="Image" displayCond="FIELD:settings.useTestimonial1:=:1" />
+      </flux:form.sheet>
+      <flux:form.sheet name="testimonial2Sheet" label="New testimonial" variables="{_all}">
+            <flux:field.checkbox name="settings.useTestimonial2"
+                       label="Enable Testimonial"
+                       default="NULL"
+                       required=""
+                       requestUpdate="1" />
+          <flux:field.input name="settings.testimonial2Header" label="Testimonial Header" displayCond="FIELD:settings.useTestimonial2:=:1" />
+          <flux:field.input name="settings.testimonial2SubHeader" label="Testimonial Subheader" displayCond="FIELD:settings.useTestimonial2:=:1" />
+          <flux:field.file name="settings.testimonial2BgImage" allowed="jpg,png,svg" showThumbnails="1" label="Image" displayCond="FIELD:settings.useTestimonial2:=:1" />
+    </flux:form.sheet>
+      <flux:form.sheet name="testimonial3Sheet" label="New testimonial" variables="{_all}">
+            <flux:field.checkbox name="settings.useTestimonial3"
+                       label="Enable Testimonial"
+                       default="NULL"
+                       required=""
+                       requestUpdate="1" />
+          <flux:field.input name="settings.testimonial3Header" label="Testimonial Header" displayCond="FIELD:settings.useTestimonial3:=:1" />
+          <flux:field.input name="settings.testimonial3SubHeader" label="Testimonial Subheader" displayCond="FIELD:settings.useTestimonial3:=:1" />
+          <flux:field.file name="settings.testimonial3BgImage" allowed="jpg,png,svg" showThumbnails="1" label="Image" displayCond="FIELD:settings.useTestimonial3:=:1" />
+      </flux:form.sheet>
+
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <small><strong>FCE: Testimonials</strong></small>
+    <hr/>
+</f:section>
+
+<f:section name="Main">
+ <!-- Testimonials -->
+    <section class="testimonials text-center">
+        <h2 class="mb-5">{settings.header}</h2>
+        <div class="row">
+          <f:if condition="{settings.useTestimonial1}">
+          </f:if>
+          <div class="col-sm">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <f:if condition="{settings.testimonial1BgImage}"><img class="img-fluid rounded-circle mb-3" src="/{f:uri.image(src:settings.testimonial1BgImage,width:'192c',height:'192c',treatIdAsReference:1)}" alt="{settings.testimonial1BgImage.alternate}"></f:if>
+              <f:if condition="{settings.testimonial1Header}"><h5>{settings.testimonial1Header}</h5></f:if>
+              <f:if condition="{settings.testimonial1SubHeader}"><p class="font-weight-light mb-0">{settings.testimonial1SubHeader}</p></f:if>
+            </div>
+          </div>
+          <f:if condition="{settings.useTestimonial3}">
+          </f:if>
+          <div class="col-sm">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <f:if condition="{settings.testimonial2BgImage}"><img class="img-fluid rounded-circle mb-3" src="/{f:uri.image(src:settings.testimonial2BgImage,width:'192c',height:'192c',treatIdAsReference:1)}" alt=""></f:if>
+              <f:if condition="{settings.testimonial2Header}"><h5>{settings.testimonial2Header}</h5></f:if>
+              <f:if condition="{settings.testimonial2SubHeader}"><p class="font-weight-light mb-0">{settings.testimonial2SubHeader}</p></f:if>
+            </div>
+          </div>
+          <f:if condition="{settings.useTestimonial3}">
+          </f:if>
+          <div class="col-sm">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <f:if condition="{settings.testimonial3BgImage}"><img class="img-fluid rounded-circle mb-3" src="/{f:uri.image(src:settings.testimonial3BgImage,width:'192c',height:'192c',treatIdAsReference:1)}" alt=""></f:if>
+              <f:if condition="{settings.testimonial3Header}"><h5>{settings.testimonial3Header}</h5></f:if>
+              <f:if condition="{settings.testimonial3SubHeader}"><p class="font-weight-light mb-0">{settings.testimonial3SubHeader}</p></f:if>
+            </div>
+          </div>
+        </div>
+    </section>
+</f:section>
+
+</div>
