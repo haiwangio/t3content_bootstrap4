@@ -3,12 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="t3content_bootstrap4" date="2017-11-11T21:20:35+00:00">
 		<header/>
 		<body>
-			<trans-unit id="flux.sidebarBoxContainer">
-				<source>Sidebar Container</source>
-			</trans-unit>
-			<trans-unit id="flux.sidebarBoxContainer.description">
-				<source>If your content is not wrapped correctly for the sidebar, the use this grid to fix that.</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

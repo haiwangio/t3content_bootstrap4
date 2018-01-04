@@ -3,24 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="t3content_bootstrap4" date="2017-11-11T21:20:35+00:00">
 		<header/>
 		<body>
-			<trans-unit id="flux.sidebarBox">
-				<source>Sidebar Box</source>
-			</trans-unit>
-			<trans-unit id="flux.sidebarBox.description">
-				<source>Grey box, usaly used ni sidebars</source>
-			</trans-unit>
-			<trans-unit id="flux.sidebarBox.fields.headline">
-				<source>Headline</source>
-			</trans-unit>
-			<trans-unit id="flux.sidebarBox.fields.text">
-				<source>Text</source>
-			</trans-unit>
-			<trans-unit id="flux.sidebarBox.fields.buttonText">
-				<source>Button Text</source>
-			</trans-unit>
-			<trans-unit id="flux.sidebarBox.fields.buttonLink">
-				<source>Button Link</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

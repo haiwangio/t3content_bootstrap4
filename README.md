@@ -1,6 +1,6 @@
 # EXT:t3content_bootstrap4 #
 
-This extension provides flux content elements  for the t3cms theme bootstrap4
+This extension provides flux content elements for the t3cms theme bootstrap4
 
 ### General Information ###
 

@@ -3,12 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="t3content_bootstrap4" date="2017-11-11T21:20:35+00:00">
 		<header/>
 		<body>
-			<trans-unit id="flux.intro">
-				<source>Intro</source>
-			</trans-unit>
-			<trans-unit id="flux.intro.description">
-				<source>Three column intro</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

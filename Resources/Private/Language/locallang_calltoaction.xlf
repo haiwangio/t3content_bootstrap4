@@ -3,21 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="t3content_bootstrap4" date="2017-11-11T21:20:35+00:00">
 		<header/>
 		<body>
-			<trans-unit id="flux.banner">
-				<source>Banner</source>
-			</trans-unit>
-			<trans-unit id="flux.banner.description">
-				<source>Big image with with on it.</source>
-			</trans-unit>
-			<trans-unit id="flux.banner.fields.image">
-				<source>Background image</source>
-			</trans-unit>
-			<trans-unit id="flux.banner.fields.headline">
-				<source>Headline</source>
-			</trans-unit>
-			<trans-unit id="flux.banner.fields.teasertext">
-				<source>Teasertext</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>
