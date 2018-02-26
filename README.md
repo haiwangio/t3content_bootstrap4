@@ -16,7 +16,7 @@ This extension provides flux content elements for the t3cms theme bootstrap4
 
 ### Contribution guidelines ###
 
-* We are happy, of you contribute with us!
+* We are happy, when you contribute with us!
 * Merge requests are wished,
 * PSR-2 guidlines
 
