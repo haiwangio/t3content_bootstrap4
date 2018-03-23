@@ -4,7 +4,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'TYPO3 Content - Bootstrap4',
-    'description' => 'This extension provides flux content elements  for the t3cms theme bootstrap4',
+    'description' => 'This extension provides flux content elements for the t3cms theme bootstrap4',
     'category' => 'templates',
     'author' => 'Salvatore Eckel',
     'author_email' => 'salvaracer@gmx.de',
@@ -16,9 +16,11 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '2.2.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.18-8.99.99',
+            'typo3' => '7.6.18-9.99.99',
         ],
         'conflicts' => [],
-        'suggests' => [],
+        'suggests' => [
+            't3themes_bootstrap4' => '1.0.0-0.0.0',
+        ],
     ],
 ];
