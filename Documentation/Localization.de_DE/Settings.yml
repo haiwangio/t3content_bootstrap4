@@ -7,7 +7,7 @@ conf.py:
   copyright: 2018
   project: TYPO3 Content - Bootstrap4 (Deutsch)
   version: 2.3
-  release: 2.3.0
+  release: 2.3.1
   latex_documents:
   - - Index
     - t3content_bootstrap4.tex
