@@ -18,5 +18,5 @@ Links
 	https://forge.typo3.org/projects/extension-t3content_bootstrap4/issues
 
 :Git Repository:
-	https://bitbucket.org/salvaracer/t3content_bootstrap4
+	https://bitbucket.org/SalvatoreEckel/t3content_bootstrap4
 
