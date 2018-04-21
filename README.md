@@ -5,7 +5,7 @@ This extension provides flux content elements for the t3cms theme bootstrap4
 ### General Information ###
 
 * t3content_bootstrap4
-* v2.3.1
+* v2.3.2
 
 ### How do I get set up? ###
 

@@ -1,0 +1,22 @@
+{
+	"name": "salvatoreeckel/t3content_bootstrap4",
+	"description": "This extension provides flux content elements for the t3cms theme Bootstrap4",
+	"keywords": [],
+	"type": "typo3-cms-extension",
+	"homepage": "",
+	"support": {
+		"email": "salvaracer@gmx.de"
+	},
+	"authors": [
+		{
+			"name": "Salvatore Eckel",
+			"email": "salvaracer@gmx.de",
+			"role": "Developer"
+		}
+	],
+	"license": "GP-2.0+",
+	"time": "2018-04-21",
+	"require": {
+		"typo3/cms-core": "^8.7 || ^9.0"
+	}
+}
