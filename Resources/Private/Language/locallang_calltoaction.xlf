@@ -3,6 +3,9 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="t3content_bootstrap4" date="2017-11-11T21:20:35+00:00">
 		<header/>
 		<body>
+			<trans-unit id="flux.newContentWizard.Bootstrap4">
+				<source>Bootstrap4</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
