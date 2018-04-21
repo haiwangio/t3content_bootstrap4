@@ -20,7 +20,7 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'conflicts' => [],
         'suggests' => [
-            't3themes_bootstrap4' => '1.0.0-0.0.0',
+            't3themes_bootstrap4' => '1.0.0',
         ],
     ],
 ];
