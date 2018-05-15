@@ -24,3 +24,5 @@ This extension provides flux content elements for the t3cms theme bootstrap4
 
 * Salvatore Eckel
 * salvaracer@gmx.de
+
+-
